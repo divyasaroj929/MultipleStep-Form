@@ -1,0 +1,7 @@
+.home-container {
+  margin: 2rem;
+  display: flex;
+  justify-content: baseline;
+  align-items: center;
+  flex-direction: column;
+}
