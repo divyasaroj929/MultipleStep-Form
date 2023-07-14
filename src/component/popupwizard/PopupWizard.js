@@ -2,13 +2,13 @@ import React, { useState } from "react";
 import "./popupwizard.css";
 
 import Header from "../Header/Header";
-import useMultiStepForm from "../../hook/useMultipleStepForm";
 
-import AccountInfo from "../userInfoWizard/AccountInfo";
-import AdderssInfo from "../userInfoWizard/AdderssInfo";
-import ContectInfo from "../userInfoWizard/ContectInfo";
-import UserInfo from "../userInfoWizard/UserInfo";
+import useMultiStepForm from "../../hooks/useMultiStepForm";
 
+import AccountInfo from "../userinfowizard/AccountInfo";
+import AdderssInfo from "../userinfowizard/AddressInfo";
+import ContectInfo from "../userinfowizard/ContectInfo";
+import UserInfo from "../userinfowizard/UserInfo";
 import Button from "../ButtonComponent/Button";
 
 const initial_Data = [

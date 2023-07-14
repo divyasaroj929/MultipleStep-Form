@@ -1,0 +1,38 @@
+h5 {
+  margin: 0px;
+  margin-bottom: 1rem;
+  padding-top: 20px;
+  text-align: start;
+  font-size: 15px;
+  color: rgb(68, 67, 67);
+  font-weight: 500;
+}
+.input-children {
+  width: 70%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+input {
+  outline: none;
+  height: 20px;
+  width: 70%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 5px 20px;
+  border: none;
+  background-color: rgb(227, 241, 253);
+}
+label {
+  width: 70%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+/* .div {
+    width: 70%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  } */

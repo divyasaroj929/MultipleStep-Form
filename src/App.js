@@ -1,8 +1,8 @@
 import { useState } from "react";
 import "./App.css";
-import ContextMain from "./components/context/ContextMain";
 import PopupWizard from "./component/popupwizard/PopupWizard";
 import Button from "./component/ButtonComponent/Button";
+import ContextMain from "./component/context/ContextMain";
 function App() {
   const [showform, setShowform] = useState(false);
 
