@@ -11,19 +11,17 @@ import ContectInfo from "../userinfowizard/ContectInfo";
 import UserInfo from "../userinfowizard/UserInfo";
 import Button from "../ButtonComponent/Button";
 
-const initial_Data = [
-  {
-    FirstName: "",
-    lastName: "",
-    Age: "",
-    Street: "",
-    city: "",
-    pincode: "",
-    Email: "",
-    password: "",
-    aadhar: "",
-  },
-];
+const initial_Data = {
+  FirstName: "",
+  lastName: "",
+  Age: "",
+  Street: "",
+  city: "",
+  pincode: "",
+  Email: "",
+  password: "",
+  aadhar: "",
+};
 
 const emilregex =
   /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
@@ -37,44 +35,43 @@ const PopupWizard = ({ closeForm }) => {
   const [erremail, setErremail] = useState(false);
   const [erraadhar, setErrAadhar] = useState(false);
   const [errorpassword, setErrorpassword] = useState(false);
-
+  console.log(value, "setervalue");
+  // value={firstname:"divya"}
   const validate = (key, value) => {
-    console.log(key, value);
+    // console.log(key, value);
     switch (key) {
       case "FirstName":
-        if (!value.lenhgt < 3) alert("too short");
-        // setErrorName(true);
+        if (!value.length < 3) setErrorName(true);
         break;
       case "lastName":
-        if (!value.lenght < 3) setErrorLastName(true);
+        if (!value.length < 3) setErrorLastName(true);
         break;
       case "Age":
-        if (!value.lenght > 0) setErrorLastName(true);
+        if (!value.length > 0) setErrorLastName(true);
         break;
       default:
         break;
     }
   };
   const updateFiled = (updatevalue) => {
-    // console.log(updatevalue);
-    for (let key = updatevalue; key <= initial_Data.length; key++) {
-      console.log(key);
-      console.log(key >= initial_Data.length);
-      if (key >= 0) {
-        validate(initial_Data);
-        console.log("hiii");
-      } else {
-        alert("no");
-      }
+    // updatevalue={firstname:"divya"}
+    console.log(updatevalue);
+    validate(updatevalue);
 
-      // if (key >= 0) {
-      //   console.log(2);
-      //   validate(key, updateFiled);
-      // } else {
-      //   alert("null");
-      // }
-    }
-    return setValue(updatevalue);
+    const keylist = Object.keys(updatevalue);
+    console.log({ keylist });
+
+    const key = keylist[0];
+    console.log(key);
+
+    const valuelist = Object.values(updatevalue);
+    console.log(valuelist);
+
+    const objvalue = valuelist[0];
+    console.log(value);
+
+    validate(key, objvalue);
+    setValue({ ...value, ...updatevalue });
   };
 
   const {

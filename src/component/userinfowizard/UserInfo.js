@@ -1,10 +1,10 @@
-import React, { useEffect } from "react";
+import React from "react";
 import FormWapper from "./Formwapper/FormWapper";
 const UserInfo = ({ FirstName, lastName, Age, updateFiled }) => {
   console.log(FirstName, lastName, Age);
   return (
     <>
-      <FormWapper title="User Infomation">
+      <FormWapper title="User Information">
         {/* <label>First Name</label> */}
         <input
           type="text"
