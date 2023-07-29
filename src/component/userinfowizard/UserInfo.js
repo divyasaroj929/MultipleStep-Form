@@ -1,7 +1,14 @@
 import React from "react";
 import FormWapper from "./Formwapper/FormWapper";
-const UserInfo = ({ FirstName, lastName, Age, updateFiled }) => {
-  console.log(FirstName, lastName, Age);
+const UserInfo = ({
+  FirstName,
+  LastName,
+  Age,
+  updateFiled,
+  errorName,
+  errorlastName,
+}) => {
+  console.log(FirstName, LastName, Age);
   return (
     <>
       <FormWapper title="User Information">
@@ -15,18 +22,42 @@ const UserInfo = ({ FirstName, lastName, Age, updateFiled }) => {
           value={FirstName}
           onChange={(e) => updateFiled({ FirstName: e.target.value })}
         />
+        {errorName ? (
+          <span
+            id="warning-1"
+            style={{
+              fontSize: "10px",
+              color: "red",
+            }}
+          >
+            First Name length greater than 3 character
+          </span>
+        ) : (
+          ""
+        )}
         {/* <label>last Name</label> */}
-
         <input
           type="text"
           placeholder="last name"
           required
           min={1}
-          value={lastName}
-          onChange={(e) => updateFiled({ lastName: e.target.value })}
+          value={LastName}
+          onChange={(e) => updateFiled({ LastName: e.target.value })}
         />
+        {errorlastName ? (
+          <span
+            id="warning-1"
+            style={{
+              fontSize: "10px",
+              color: "red",
+            }}
+          >
+            last name length greater than 2 character
+          </span>
+        ) : (
+          ""
+        )}
         {/* <label>Age</label> */}
-
         <input
           placeholder="Age"
           type="number"

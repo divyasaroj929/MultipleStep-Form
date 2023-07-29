@@ -13,14 +13,14 @@ import Button from "../ButtonComponent/Button";
 
 const initial_Data = {
   FirstName: "",
-  lastName: "",
+  LastName: "",
   Age: "",
   Street: "",
-  city: "",
-  pincode: "",
+  City: "",
+  Pincode: "",
   Email: "",
-  password: "",
-  aadhar: "",
+  Password: "",
+  Aadhar: "",
 };
 
 const emilregex =
@@ -38,17 +38,40 @@ const PopupWizard = ({ closeForm }) => {
   console.log(value, "setervalue");
   // value={firstname:"divya"}
   const validate = (key, value) => {
-    // console.log(key, value);
+    console.log(key, value);
     switch (key) {
       case "FirstName":
-        if (!value.length < 3) setErrorName(true);
+        if (value.length < 3 || value === "") {
+          setErrorName(true);
+        } else setErrorName(false);
         break;
-      case "lastName":
-        if (!value.length < 3) setErrorLastName(true);
+      case "LastName":
+        if (value.length < 3 || value === "") {
+          setErrorLastName(true);
+        } else setErrorLastName(false);
         break;
-      case "Age":
-        if (!value.length > 0) setErrorLastName(true);
+      // case "Age":
+      //   if (!value.length > 0) setErrorLastName(true);
+      //   break;
+
+      case "Email":
+        if (!value.match(emilregex)) {
+          setErremail(true);
+        } else setErremail(false);
         break;
+
+      case "Password":
+        if (value.length < 8 || value === "") {
+          setErrorpassword(true);
+        } else setErrorpassword(false);
+        break;
+        
+      case "Aadhar":
+        if (!value.match(adharregex)) {
+          setErrAadhar(true);
+        } else setErrAadhar(false);
+        break;
+
       default:
         break;
     }
