@@ -65,7 +65,7 @@ const PopupWizard = ({ closeForm }) => {
           setErrorpassword(true);
         } else setErrorpassword(false);
         break;
-        
+
       case "Aadhar":
         if (!value.match(adharregex)) {
           setErrAadhar(true);
