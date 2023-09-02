@@ -22,6 +22,9 @@ const initial_Data = {
   Aadhar: "",
 };
 
+const adharregex =
+  /^([0-9]{4}[0-9]{4}[0-9]{4}$)|([0-9]{4}\s[0-9]{4}\s[0-9]{4}$)|([0-9]{4}-[0-9]{4}-[0-9]{4}$)/;
+
 const PopupWizard = ({ closeForm }) => {
   const [value, setValue] = useState(initial_Data);
   const [errorName, setErrorName] = useState(false);
