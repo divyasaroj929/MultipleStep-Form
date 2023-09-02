@@ -16,13 +16,13 @@ const AccountInfo = ({
           type="text"
           autoFocus
           required
-          min={1}
+          // min={1}
           value={Email}
           onChange={(e) => updateFiled({ Email: e.target.value })}
         />
         {errmail ? (
           <span
-            id="warning-1"
+            // id="warning-1"
             style={{
               fontSize: "10px",
               color: "red",
@@ -38,7 +38,7 @@ const AccountInfo = ({
           placeholder="Password"
           type="password"
           required
-          min={1}
+          // min={1}
           value={Password}
           onChange={(e) => updateFiled({ Password: e.target.value })}
         />

@@ -5,7 +5,6 @@ import Header from "../Header/Header";
 
 import useMultiStepForm from "../../hooks/useMultiStepForm";
 
-import AccountInfo from "../userinfowizard/AccountInfo";
 import AdderssInfo from "../userinfowizard/AddressInfo";
 import ContectInfo from "../userinfowizard/ContectInfo";
 import UserInfo from "../userinfowizard/UserInfo";
@@ -23,19 +22,11 @@ const initial_Data = {
   Aadhar: "",
 };
 
-const emilregex =
-  /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-
-const adharregex =
-  /^([0-9]{4}[0-9]{4}[0-9]{4}$)|([0-9]{4}\s[0-9]{4}\s[0-9]{4}$)|([0-9]{4}-[0-9]{4}-[0-9]{4}$)/;
-
 const PopupWizard = ({ closeForm }) => {
   const [value, setValue] = useState(initial_Data);
   const [errorName, setErrorName] = useState(false);
   const [errorLastName, setErrorLastName] = useState(false);
-  const [erremail, setErremail] = useState(false);
   const [erraadhar, setErrAadhar] = useState(false);
-  const [errorpassword, setErrorpassword] = useState(false);
   console.log(value, "setervalue");
   // value={firstname:"divya"}
   const validate = (key, value) => {
@@ -50,21 +41,6 @@ const PopupWizard = ({ closeForm }) => {
         if (value.length < 3 || value === "") {
           setErrorLastName(true);
         } else setErrorLastName(false);
-        break;
-      // case "Age":
-      //   if (!value.length > 0) setErrorLastName(true);
-      //   break;
-
-      case "Email":
-        if (!value.match(emilregex)) {
-          setErremail(true);
-        } else setErremail(false);
-        break;
-
-      case "Password":
-        if (value.length < 8 || value === "") {
-          setErrorpassword(true);
-        } else setErrorpassword(false);
         break;
 
       case "Aadhar":
@@ -115,12 +91,6 @@ const PopupWizard = ({ closeForm }) => {
       errorlastName={errorLastName}
     />,
     <AdderssInfo {...value} updateFiled={updateFiled} />,
-    <AccountInfo
-      {...value}
-      updateFiled={updateFiled}
-      erremail={erremail}
-      errorpassword={errorpassword}
-    />,
     <ContectInfo {...value} updateFiled={updateFiled} erraadhar={erraadhar} />,
   ]);
 
