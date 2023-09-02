@@ -85,7 +85,6 @@ const PopupWizard = ({ closeForm }) => {
     back,
     next,
     isLastStep,
-    activePage,
   } = useMultiStepForm([
     <UserInfo
       {...value}

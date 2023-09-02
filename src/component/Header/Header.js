@@ -11,9 +11,9 @@ const Header = ({
   isFirstStep,
   back,
 }) => {
-  // console.log({ totalPage, activePage });
+  console.log({ totalPage, activePage });
 
-  // console.log({ width: (100 / (totalPage - 1)) * activePage });
+  console.log({ width: (100 / (totalPage - 1)) * activePage });
   return (
     <>
       <div className="header-section">
